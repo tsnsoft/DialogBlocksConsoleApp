@@ -1,1 +1,1 @@
-start /b wsl ./linux_app
+wsl ./linux_app
