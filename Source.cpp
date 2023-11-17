@@ -13,24 +13,29 @@ int main(int argc, char** argv)
 {
 	wxInitialize(); // Инициализировать работу с библиотекой
 
-	wxLocale m_locale;
-	m_locale.Init(wxLANGUAGE_RUSSIAN, wxLOCALE_DONT_LOAD_DEFAULT);
+	wxLocale m_locale; // Создать объект локали для wxWidgets
+	m_locale.Init(wxLANGUAGE_RUSSIAN, wxLOCALE_DONT_LOAD_DEFAULT); // Установить локаль для wxWidgets
 
 #ifdef __WXMSW__ // Определение для Windows
-//	SetConsoleCP(65001); // Принудительная установка консоли ввода на UTF-8
-//	SetConsoleOutputCP(65001); // Принудительная установка консоли вывода на UTF-8
+	SetConsoleCP(1251); // Установить кодовую страницу ввода для Windows
+	SetConsoleOutputCP(1251); // Установить кодовую страницу вывода для Windows
 #endif
+
+	std::locale::global(std::locale("")); // Установить локаль
+	std::wcout.imbue(std::locale()); // Установить локаль для std::wcout
+	std::wcin.imbue(std::locale()); // Установить локаль для std::wcin
 
 	wxPuts(wxT("Замечательно! Das ist großartig! Wonderful! 精彩的！ رائع!")); // Вывести строку
 	std::cout << "Замечательно! Das ist großartig! Wonderful! 精彩的！ رائع!2"; // Вывести строку
 	wxPuts(""); // Вывести пустую строку
 
-	 std::string input; // Создать строковую переменную
-	//char input[20]; // Создать строковую переменную
+	std::wstring input; // Создать строковую переменную
 	wxPuts(wxT("Как вас зовут?")); // Вывести строку
-	//std::cin >> input;
-	std::getline(std::cin, input, '\n'); // Считать строку
+
+	std::wcin >> input; // Считать строку
+
 	wxString result(input); // Создать строку
+
 	std::cout << input << "1" << std::endl; // Вывести строку
 	std::cout << result.c_str() << "2" << std::endl; // Вывести строку
 	wxPuts(result << "3"); // Вывести строку
@@ -39,7 +44,7 @@ int main(int argc, char** argv)
 	wxPuts(wxGetHomeDir()); // Получить домашнюю директорию
 	wxPuts(wxGetOsDescription()); // Получить описание ОС
 	wxPuts(wxGetUserName()); // Получить имя пользователя
-//	wxPuts(wxGetFullHostName()); // Получить полное имя хоста
+	//	wxPuts(wxGetFullHostName()); // Получить полное имя хоста
 	wxPuts(""); // Вывести пустую строку
 
 	wxString str1 = wxT("Linux"); // Создать строку
