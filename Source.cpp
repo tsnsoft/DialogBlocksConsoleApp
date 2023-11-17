@@ -146,7 +146,3 @@ int main(int argc, char** argv)
 
 	wxUninitialize(); // Завершить работу с библиотекой
 }
-
-
-
-
