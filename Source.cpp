@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 	wxPuts(""); // Вывести пустую строку
 
 	std::wstring input; // Создать строковую переменную
-	wxPuts(wxT("Как вас зовут?")); // Вывести строку
+	wxPrintf(wxT("Как вас зовут: ")); // Вывести строку
 	std::wcin >> input; // Считать строку
 	wxString result(input); // Создать строку
 	wxPuts(wxT("Здравствуйте, ") + result + wxT("!")); // Вывести строку
