@@ -4,53 +4,38 @@
 ![srcreenshot](screenshot1.png)
 
 ```
-#include <wx/string.h>
-#include <wx/utils.h>
-#include <wx/datetime.h>
-#include <wx/crt.h>
+#include <wx/wx.h>
 #include <wx/file.h>
 #include <wx/dir.h>
-#include <wx/filefn.h>
 #include <wx/textfile.h>
-#include <wx/wx.h>
-
 
 int main(int argc, char** argv)
 {
-	wxInitialize(); // Инициализировать работу с библиотекой
-
+	setlocale(LC_ALL, "ru_RU.UTF-8"); // Установить русскую локаль для Linux
 	wxLocale m_locale; // Создать объект локали для wxWidgets
 	m_locale.Init(wxLANGUAGE_RUSSIAN, wxLOCALE_DONT_LOAD_DEFAULT); // Установить локаль для wxWidgets
 
 #ifdef __WXMSW__ // Определение для Windows
-	SetConsoleCP(1251); // Установить кодовую страницу ввода для Windows
-	SetConsoleOutputCP(1251); // Установить кодовую страницу вывода для Windows
+	_setmode(_fileno(stdout), _O_U16TEXT); // Установить Юникод для вывода в консоли Windows
+	_setmode(_fileno(stdin), _O_U16TEXT); // Установить Юникод для ввода в консоли Windows
+	_setmode(_fileno(stderr), _O_U16TEXT); // Установить Юникод для вывода ошибок в консоли Windows
 #endif
 
-	std::locale::global(std::locale("")); // Установить локаль
-	std::wcout.imbue(std::locale()); // Установить локаль для std::wcout
-	std::wcin.imbue(std::locale()); // Установить локаль для std::wcin
-
 	wxPuts(wxT("Замечательно! Das ist großartig! Wonderful! 精彩的！ رائع!")); // Вывести строку
-	std::cout << "Замечательно! Das ist großartig! Wonderful! 精彩的！ رائع!2"; // Вывести строку
 	wxPuts(""); // Вывести пустую строку
 
 	std::wstring input; // Создать строковую переменную
 	wxPuts(wxT("Как вас зовут?")); // Вывести строку
-
 	std::wcin >> input; // Считать строку
-
 	wxString result(input); // Создать строку
+	wxPuts(wxT("Здравствуйте, ") + result); // Вывести строку
 
-	std::cout << input << "1" << std::endl; // Вывести строку
-	std::cout << result.c_str() << "2" << std::endl; // Вывести строку
-	wxPuts(result << "3"); // Вывести строку
 	wxPuts(""); // Вывести пустую строку
 
 	wxPuts(wxGetHomeDir()); // Получить домашнюю директорию
 	wxPuts(wxGetOsDescription()); // Получить описание ОС
 	wxPuts(wxGetUserName()); // Получить имя пользователя
-	//	wxPuts(wxGetFullHostName()); // Получить полное имя хоста
+	wxPuts(wxGetFullHostName()); // Получить полное имя хоста
 	wxPuts(""); // Вывести пустую строку
 
 	wxString str1 = wxT("Linux"); // Создать строку
@@ -150,14 +135,52 @@ int main(int argc, char** argv)
 	wxExecute("notepad.exe"); // Выполнить команду
 #endif
 
-	wxUninitialize(); // Завершить работу с библиотекой
+#ifdef __WXMSW__ // Определение для Windows
+	system("pause"); // Приостановить выполнение программы
+#else // Определение для Linux
+	system("read -p \"Нажмите Enter для продолжения...\"  var"); // Приостановить выполнение программы
+#endif
+
+	return 0;
 }
 ```
 
+## Настройки DialogBlocks:
+
+**WXWIN:** D:\Development\CPP\wxWidgetsDBls
+
+**DBPROJECTS:** D:\Projects\DialogBlocksProjects
+
+**MSBUILDDIR:** C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin
+
+**MSVCDIR:** C:\Program Files\Microsoft Visual Studio\2022\Community
+
+**PLATFORMSDK:** C:\Program Files (x86)\Windows Kits\10
+
+**VC++ version:** 17 <<-- Microsoft Visual Studio Community 2022 (64-разрядная версия) - Версия 17.8.2
+
+**VC++ tools version:** 14.38.33130 <<-- C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130
+
+**Full Platform SDK version**: 10.0.22621.0 <<-- C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0
+
+**Message encoding:** cp866
+
+*Чтобы компилировался проект без BOM в UTF-8 в конфигурации сборки укажите:*
+
+**Extra compile flags:** %AUTO% /utf-8
+
+*Чтобы компилировался проект в режиме консоли в конфигурации каждой сборки также укажите:*
+
+**GUI mode:** Console
+
 ## Ссылки:
+
+http://www.anthemion.co.uk/dialogblocks/DialogBlocks-5.18-beta3-Setup.exe
 
 http://www.anthemion.co.uk/dialogblocks/
 
 https://www.wxwidgets.org/
 
 https://visualstudio.microsoft.com/ru/vs/community/
+
+http://www.anthemion.co.uk/dialogblocks/ImageBlocks-1.06-Setup.exe
