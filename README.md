@@ -1,7 +1,7 @@
 # DialogBlocksConsoleApp
 Пример консольной программы на C++ с использованием wxWidgets и DialogBlocks для Visual Studio 2022
 
-![srcreenshot](screenshot1.png)
+![srcreenshot](screenshot.png)
 
 ```
 #include <wx/wx.h>
