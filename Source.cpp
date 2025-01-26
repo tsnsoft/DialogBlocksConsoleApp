@@ -45,11 +45,11 @@ int main(int argc, char** argv)
 	wxPuts(""); // Вывести пустую строку
 
 	wxDateTime now = wxDateTime::Now();
-	wxPrintf(wxT("   Tokyo: %s\n"), now.Format(wxT("%a %T"), wxDateTime::GMT9).c_str()); // Вывести дату и время
-	wxPrintf(wxT("  Moscow: %s\n"), now.Format(wxT("%a %T"), wxDateTime::MSD).c_str()); // Вывести дату и время
-	wxPrintf(wxT("Budapest: %s\n"), now.Format(wxT("%a %T"), wxDateTime::CEST).c_str()); // Вывести дату и время
-	wxPrintf(wxT("  London: %s\n"), now.Format(wxT("%a %T"), wxDateTime::WEST).c_str()); // Вывести дату и время
-	wxPrintf(wxT("New York: %s\n"), now.Format(wxT("%a %T"), wxDateTime::EDT).c_str()); // Вывести дату и время
+   	wxPrintf(wxT("   Tokyo: %s\n"), now.Format(wxT("%Y-%m-%d %H:%M:%S"), wxDateTime::GMT9).c_str()); // Вывести дату и время
+   	wxPrintf(wxT("  Moscow: %s\n"), now.Format(wxT("%Y-%m-%d %H:%M:%S"), wxDateTime::MSD).c_str()); // Вывести дату и время
+	wxPrintf(wxT("Budapest: %s\n"), now.Format(wxT("%Y-%m-%d %H:%M:%S"), wxDateTime::CEST).c_str()); // Вывести дату и время
+	wxPrintf(wxT("  London: %s\n"), now.Format(wxT("%Y-%m-%d %H:%M:%S"), wxDateTime::WEST).c_str()); // Вывести дату и время
+	wxPrintf(wxT("New York: %s\n"), now.Format(wxT("%Y-%m-%d %H:%M:%S"), wxDateTime::EDT).c_str()); // Вывести дату и время
 	wxPuts(""); // Вывести пустую строку
 
 	wxString str5 = wxT("The history of my life"); // Создать строку
@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 	wxPuts(""); // Вывести пустую строку
 
 	wxDateTime now2 = wxDateTime::Now(); // Получить текущую дату и время
-	wxString date2 = now.Format(wxT("%B %d %Y")); // Сформировать строку
+	wxString date2 = now2.Format(wxT("%B %d %Y")); // Сформировать строку
 	wxPuts(date2); // Вывести строку
 	wxDateSpan span(0, 1); // Создать временной интервал (1 месяц)
 	wxDateTime then = now.Add(span); // Добавить интервал к текущей дате и времени

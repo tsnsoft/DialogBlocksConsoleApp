@@ -1,5 +1,5 @@
 # DialogBlocksConsoleApp
-Пример консольной программы на C++ с использованием wxWidgets и DialogBlocks для Visual Studio 2022
+Пример консольной программы на C++ с использованием wxWidgets и DialogBlocks для Visual Studio 2022 и mingw64
 
 ![srcreenshot](screenshot.png)
 
@@ -51,11 +51,11 @@ int main(int argc, char** argv)
 	wxPuts(""); // Вывести пустую строку
 
 	wxDateTime now = wxDateTime::Now();
-	wxPrintf(wxT("   Tokyo: %s\n"), now.Format(wxT("%a %T"), wxDateTime::GMT9).c_str()); // Вывести дату и время
-	wxPrintf(wxT("  Moscow: %s\n"), now.Format(wxT("%a %T"), wxDateTime::MSD).c_str()); // Вывести дату и время
-	wxPrintf(wxT("Budapest: %s\n"), now.Format(wxT("%a %T"), wxDateTime::CEST).c_str()); // Вывести дату и время
-	wxPrintf(wxT("  London: %s\n"), now.Format(wxT("%a %T"), wxDateTime::WEST).c_str()); // Вывести дату и время
-	wxPrintf(wxT("New York: %s\n"), now.Format(wxT("%a %T"), wxDateTime::EDT).c_str()); // Вывести дату и время
+    wxPrintf(wxT("   Tokyo: %s\n"), now.Format(wxT("%Y-%m-%d %H:%M:%S"), wxDateTime::GMT9).c_str());
+   	wxPrintf(wxT("  Moscow: %s\n"), now.Format(wxT("%Y-%m-%d %H:%M:%S"), wxDateTime::MSD).c_str()); // Вывести дату и время
+	wxPrintf(wxT("Budapest: %s\n"), now.Format(wxT("%Y-%m-%d %H:%M:%S"), wxDateTime::CEST).c_str()); // Вывести дату и время
+	wxPrintf(wxT("  London: %s\n"), now.Format(wxT("%Y-%m-%d %H:%M:%S"), wxDateTime::WEST).c_str()); // Вывести дату и время
+	wxPrintf(wxT("New York: %s\n"), now.Format(wxT("%Y-%m-%d %H:%M:%S"), wxDateTime::EDT).c_str()); // Вывести дату и время
 	wxPuts(""); // Вывести пустую строку
 
 	wxString str5 = wxT("The history of my life"); // Создать строку
@@ -81,7 +81,7 @@ int main(int argc, char** argv)
 	wxPuts(""); // Вывести пустую строку
 
 	wxDateTime now2 = wxDateTime::Now(); // Получить текущую дату и время
-	wxString date2 = now.Format(wxT("%B %d %Y")); // Сформировать строку
+	wxString date2 = now2.Format(wxT("%B %d %Y")); // Сформировать строку
 	wxPuts(date2); // Вывести строку
 	wxDateSpan span(0, 1); // Создать временной интервал (1 месяц)
 	wxDateTime then = now.Add(span); // Добавить интервал к текущей дате и времени
@@ -147,9 +147,11 @@ int main(int argc, char** argv)
 
 ## Настройки DialogBlocks:
 
-**WXWIN:** D:\Development\CPP\wxWidgetsDBls
+**WXWIN:** D:\Development\wxWidgets
 
 **DBPROJECTS:** D:\Projects\DialogBlocksProjects
+
+**MINGWDIR:** D:\Development\RedPanda-CPP\mingw64
 
 **MSBUILDDIR:** C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin
 
@@ -157,13 +159,15 @@ int main(int argc, char** argv)
 
 **PLATFORMSDK:** C:\Program Files (x86)\Windows Kits\10
 
-**VC++ version:** 17 <<-- Microsoft Visual Studio Community 2022 (64-разрядная версия) - Версия 17.8.2
+**Target wxWidgets version:** 3.2.6
 
-**VC++ tools version:** 14.38.33130 <<-- C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130
+**VC++ version:** 17 <<-- Microsoft Visual Studio Community 2022 (64-разрядная версия) - Версия 17.12.4
+
+**VC++ tools version:** 14.42.34433 <<-- C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433
 
 **Full Platform SDK version**: 10.0.22621.0 <<-- C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0
 
-**Message encoding:** cp866
+**Message encoding:** utf-8
 
 *Чтобы компилировался проект без BOM в UTF-8 в конфигурации сборки укажите:*
 

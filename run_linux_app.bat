@@ -1,1 +1,1 @@
-wsl ./linux_app
+@wsl ./linux_app
