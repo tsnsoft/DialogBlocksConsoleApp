@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ItemGroup Label="ProjectConfigurations">
-		<ProjectConfiguration Include="Debug|Win32">
-			<Configuration>Debug</Configuration>
+		<ProjectConfiguration Include="VC++ Unicode Debug|Win32">
+			<Configuration>VC++ Unicode Debug</Configuration>
 			<Platform>Win32</Platform>
 		</ProjectConfiguration>
-		<ProjectConfiguration Include="Release|Win32">
-			<Configuration>Release</Configuration>
+		<ProjectConfiguration Include="VC++ Unicode Release|Win32">
+			<Configuration>VC++ Unicode Release</Configuration>
 			<Platform>Win32</Platform>
 		</ProjectConfiguration>
 	</ItemGroup>
@@ -17,15 +17,15 @@
 		<WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
 	</PropertyGroup>
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-		<Configuration>Debug</Configuration>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VC++ Unicode Debug|Win32'" Label="Configuration">
+		<Configuration>VC++ Unicode Debug</Configuration>
 		<ConfigurationType>Application</ConfigurationType>
 		<UseDebugLibraries>true</UseDebugLibraries>
 		<CharacterSet>Unicode</CharacterSet>
 		<PlatformToolset>v143</PlatformToolset>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-		<Configuration>Release</Configuration>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VC++ Unicode Release|Win32'" Label="Configuration">
+		<Configuration>VC++ Unicode Release</Configuration>
 		<ConfigurationType>Application</ConfigurationType>
 		<UseDebugLibraries>false</UseDebugLibraries>
 		<WholeProgramOptimization>true</WholeProgramOptimization>
@@ -35,24 +35,24 @@
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
 	<ImportGroup Label="ExtensionSettings">
 	</ImportGroup>
-	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='VC++ Unicode Debug|Win32'">
 		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
 	</ImportGroup>
-	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='VC++ Unicode Release|Win32'">
 		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
 	</ImportGroup>
 	<PropertyGroup Label="UserMacros" />
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VC++ Unicode Debug|Win32'">
 		<LinkIncremental>true</LinkIncremental>
-		<OutDir>Debug\</OutDir>
-		<IntDir>Debug\</IntDir>
+		<OutDir>VCUnicodeDebug\</OutDir>
+		<IntDir>VCUnicodeDebug\</IntDir>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VC++ Unicode Release|Win32'">
 		<LinkIncremental>false</LinkIncremental>
-		<OutDir>Release\</OutDir>
-		<IntDir>Release\</IntDir>
+		<OutDir>VCUnicodeRelease\</OutDir>
+		<IntDir>VCUnicodeRelease\</IntDir>
 	</PropertyGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='VC++ Unicode Debug|Win32'">
 		<ClCompile>
 			<PrecompiledHeader>NotUsing</PrecompiledHeader>
 			<WarningLevel>Level4</WarningLevel>
@@ -74,7 +74,7 @@
 			<PreprocessorDefinitions>NOPCH;WIN32;__WXMSW__;_WINDOWS;__WXDEBUG__;_DEBUG;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 		</ResourceCompile>
 	</ItemDefinitionGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='VC++ Unicode Release|Win32'">
 		<ClCompile>
 			<PrecompiledHeader>NotUsing</PrecompiledHeader>
 			<WarningLevel>Level4</WarningLevel>

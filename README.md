@@ -179,9 +179,9 @@ int main(int argc, char** argv)
 
 ## Ссылки:
 
-http://www.anthemion.co.uk/dialogblocks/DialogBlocks-5.18-beta3-Setup.exe
+__DialogBlocks:__ http://www.anthemion.co.uk/dialogblocks/
 
-http://www.anthemion.co.uk/dialogblocks/
+***Бесплатная лицензия на DialogBlocks:*** https://github.com/proffix4/dialogblocks_free
 
 https://www.wxwidgets.org/
 
