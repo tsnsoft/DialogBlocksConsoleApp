@@ -70,7 +70,7 @@ int main(int argc, char** argv)
 	wxString str6 = wxT("You make me want to be a better man.\n"); // Создать строку
 	wxString str61 = wxT("Замечательно! Das ist großartig! Wonderful! 精彩的！ رائع!\n"); // Создать строку
 	wxFile file; // Файловая переменная
-	file.Create(wxT("quote"), true); // Создать файл
+	file.Create(wxT("quote.txt"), true); // Создать файл
 	if (file.IsOpened()) // Проверить открытие файла
 		wxPuts(wxT("the file is opened")); // Вывести строку
 	file.Write(str6); // Записать строку в файл
@@ -117,7 +117,7 @@ int main(int argc, char** argv)
 	wxPrintf(wxT("The string has %d characters\n"), (int)str8.Len());
 	wxPuts(""); // Вывести пустую строку
 
-	wxTextFile file7(wxT("quote"));
+	wxTextFile file7(wxT("quote.txt"));
 	file7.Open();
 	wxPrintf(wxT("Number of lines: %d\n"), (int)file7.GetLineCount());
 	wxPrintf(wxT("First line: %s\n"), file7.GetFirstLine().c_str());
@@ -187,4 +187,4 @@ https://www.wxwidgets.org/
 
 https://visualstudio.microsoft.com/ru/vs/community/
 
-http://www.anthemion.co.uk/dialogblocks/ImageBlocks-1.06-Setup.exe
+http://www.anthemion.co.uk/dialogblocks/ImageBlocks-1.07-Setup.exe
