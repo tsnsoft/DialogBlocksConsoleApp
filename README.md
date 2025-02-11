@@ -145,38 +145,6 @@ int main(int argc, char** argv)
 }
 ```
 
-## Настройки DialogBlocks:
-
-**WXWIN:** D:\Development\wxWidgets
-
-**DBPROJECTS:** D:\Projects\DialogBlocksProjects
-
-**MINGWDIR:** D:\Development\RedPanda-CPP\mingw64
-
-**MSBUILDDIR:** C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin
-
-**MSVCDIR:** C:\Program Files\Microsoft Visual Studio\2022\Community
-
-**PLATFORMSDK:** C:\Program Files (x86)\Windows Kits\10
-
-**Target wxWidgets version:** 3.2.6
-
-**VC++ version:** 17 <<-- Microsoft Visual Studio Community 2022 (64-разрядная версия) - Версия 17.12.4
-
-**VC++ tools version:** 14.42.34433 <<-- C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433
-
-**Full Platform SDK version**: 10.0.22621.0 <<-- C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0
-
-**Message encoding:** utf-8
-
-*Чтобы компилировался проект без BOM в UTF-8 в конфигурации сборки укажите:*
-
-**Extra compile flags:** %AUTO% /utf-8
-
-*Чтобы компилировался проект в режиме консоли в конфигурации каждой сборки также укажите:*
-
-**GUI mode:** Console
-
 ## Ссылки:
 
 __DialogBlocks:__ http://www.anthemion.co.uk/dialogblocks/
